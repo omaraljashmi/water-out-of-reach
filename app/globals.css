@@ -608,10 +608,16 @@ button {
 }
 
 .notes-body h3 {
-  margin: 0 0 10px;
-  color: var(--verified);
+  display: inline-block;
+  margin: 0 0 13px;
+  padding: 6px 9px 5px;
+  border-radius: 3px;
+  background: var(--verified);
+  color: var(--white);
   font-size: 0.74rem;
+  font-weight: 800;
   letter-spacing: 0.11em;
+  line-height: 1.15;
   text-transform: uppercase;
 }
 
