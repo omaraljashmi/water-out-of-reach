@@ -362,67 +362,68 @@ export function WaterAccessAtlas() {
       <section className="notes" id="notes" aria-labelledby="notes-title">
         <div>
           <p className="section-kicker">Why this map exists</p>
-          <h2 id="notes-title">The gap is rarely just one thing.</h2>
+          <h2 id="notes-title">Why safe water is still hard to reach.</h2>
         </div>
         <div className="notes-body">
           <div>
             <h3>Why ask this question</h3>
             <p>
-              Because water can exist and still not reach a home. I made this
-              map to find where that access gap is largest, understand what is
-              keeping it open and connect the data to a real way to help. The{" "}
+              Water can be nearby and still be hard to reach. A village may not
+              have pipes, a working pump, clean storage or money to keep a water
+              system running. I made this map to show where the problem is
+              biggest and where help can start.{" "}
               <a href={JMP_REPORT_URL} target="_blank" rel="noreferrer">
-                latest JMP report
-              </a>{" "}
-              shows how sharply access still changes between rural and urban
-              areas, regions and income groups.
-            </p>
-          </div>
-          <div>
-            <h3>How the map is calculated</h3>
-            <p>
-              Basic means an improved source that takes no more than 30 minutes
-              for a round trip. I subtract each country&apos;s 2024{" "}
-              <a
-                href={WORLD_BANK_WATER_DATA_URL}
-                target="_blank"
-                rel="noreferrer"
-              >
-                basic access estimate
-              </a>{" "}
-              from 100. Countries at 20% or more are shown in blue. The people
-              estimate is that gap multiplied by the{" "}
-              <a
-                href={WORLD_BANK_POPULATION_DATA_URL}
-                target="_blank"
-                rel="noreferrer"
-              >
-                2024 population
-              </a>
-              . These are national estimates, not water tests.{" "}
-              <a
-                href={WHO_WATER_LADDER_URL}
-                target="_blank"
-                rel="noreferrer"
-              >
-                See the service ladder
+                See the research
               </a>
               .
             </p>
           </div>
           <div>
-            <h3>What keeps showing up</h3>
+            <h3>How the map works</h3>
             <p>
-              All 37 countries have one measurable thing in common: at least one
-              in five people lacks a basic service. 31 of them are in Sub
-              Saharan Africa. There is no single cause, but the same pressures
-              repeat: long rural distances, low incomes,{" "}
+              Blue countries are places where at least one in five people does
+              not have a basic drinking water service. Basic means the water
+              comes from a safer type of source and takes 30 minutes or less to
+              collect. I take each country&apos;s 2024{" "}
+              <a
+                href={WORLD_BANK_WATER_DATA_URL}
+                target="_blank"
+                rel="noreferrer"
+              >
+                access number
+              </a>{" "}
+              away from 100. To estimate how many people that represents, I use
+              the same percentage with{" "}
+              <a
+                href={WORLD_BANK_POPULATION_DATA_URL}
+                target="_blank"
+                rel="noreferrer"
+              >
+                2024 population data
+              </a>
+              .{" "}
+              <a
+                href={WHO_WATER_LADDER_URL}
+                target="_blank"
+                rel="noreferrer"
+              >
+                See what basic service means
+              </a>
+              .
+            </p>
+          </div>
+          <div>
+            <h3>What these countries share</h3>
+            <p>
+              31 of the 37 countries are in Sub Saharan Africa. Every country is
+              different, but the same problems often appear. Water is far from
+              rural homes. Families have less money.{" "}
               <a
                 href={WHO_SMALL_SUPPLIES_URL}
                 target="_blank"
                 rel="noreferrer"
               >
-                small systems short on technical and financial support
+                Local water systems lack staff and funding
               </a>
               ,{" "}
               <a
@@ -430,7 +431,7 @@ export function WaterAccessAtlas() {
                 target="_blank"
                 rel="noreferrer"
               >
-                conflict breaking pipes and power
+                war damages pipes and power
               </a>
               , and{" "}
               <a
@@ -438,44 +439,42 @@ export function WaterAccessAtlas() {
                 target="_blank"
                 rel="noreferrer"
               >
-                droughts or floods disrupting supply
+                droughts and floods damage water sources
               </a>
               .
             </p>
           </div>
           <div>
-            <h3>What the gap does to people</h3>
+            <h3>What happens to people</h3>
             <p>
-              When water is far away, people lose hours carrying it. Women and
-              children often carry most of that burden. When a source is unsafe,
-              the cost becomes illness, missed school, lost work and medical
-              bills. WHO links contaminated water to cholera, diarrhoea,
-              dysentery, typhoid and polio.{" "}
+              People can spend hours collecting water. Women and children often
+              carry most of it. Unsafe water can spread cholera, diarrhoea,
+              typhoid and other diseases. It can also mean missed school, missed
+              work and more medical bills.{" "}
               <a
                 href={WHO_DRINKING_WATER_FACTS_URL}
                 target="_blank"
                 rel="noreferrer"
               >
-                Read the health evidence
+                See the health facts
               </a>
               .
             </p>
           </div>
           <div>
-            <h3>How teams decide on a well</h3>
+            <h3>When a well makes sense</h3>
             <p>
-              A dark blue country is a place to investigate, not a drilling
-              instruction. Teams need local data on groundwater, depth, yield
-              and water quality. They also have to plan the pump, treatment,
-              maintenance and monitoring. Sometimes a well is right. Sometimes
-              the answer is pipes, repairs, spring protection, filters or
-              rainwater collection.{" "}
+              A blue country does not automatically mean build a well. Local
+              experts first check if there is enough safe water underground.
+              They also plan the pump, water testing and who will keep the well
+              working. Sometimes a well is right. Sometimes pipes, repairs,
+              filters or rainwater collection work better.{" "}
               <a
                 href={WHO_BOREHOLE_GUIDANCE_URL}
                 target="_blank"
                 rel="noreferrer"
               >
-                Read the WHO borehole guidance
+                See the WHO well guide
               </a>{" "}
               and{" "}
               <a
@@ -483,20 +482,20 @@ export function WaterAccessAtlas() {
                 target="_blank"
                 rel="noreferrer"
               >
-                see how solutions are chosen
+                how projects are chosen
               </a>
               .
             </p>
           </div>
           <div>
-            <h3>Where the map stops</h3>
+            <h3>What the map cannot show</h3>
             <p>
-              The map gets us to a country, not a village. JMP builds national
-              estimates from household data and fits a trend across the
-              available points. A local assessment still has to decide who
-              needs help and which solution can stay safe and working.{" "}
+              This map points to countries, not villages. A country number can
+              hide big differences from one place to another. Local teams still
+              need to visit communities, test the water and listen to people
+              before choosing a project.{" "}
               <a href={JMP_METHODS_URL} target="_blank" rel="noreferrer">
-                Read the estimation method
+                Read how the numbers are made
               </a>
               .
             </p>

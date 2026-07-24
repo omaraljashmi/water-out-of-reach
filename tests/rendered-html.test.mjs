@@ -33,9 +33,9 @@ test("server renders the drinking water access atlas", async () => {
   assert.match(html, /Without a basic drinking water service/);
   assert.match(html, /charity: water/);
   assert.match(html, /Why ask this question/);
-  assert.match(html, /31 of them are in Sub Saharan Africa/);
-  assert.match(html, /not a drilling instruction/);
-  assert.match(html, /Read the estimation method/);
+  assert.match(html, /31 of the 37 countries are in Sub Saharan Africa/);
+  assert.match(html, /does not automatically mean build a well/);
+  assert.match(html, /Read how the numbers are made/);
   assert.equal((html.match(/class="country-marker/g) ?? []).length, 37);
   assert.match(html, /charitynavigator\.org\/ein\/223936753/);
   assert.match(html, /Darker blue means a greater share of people in need/);
