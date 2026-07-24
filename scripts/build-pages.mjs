@@ -27,7 +27,7 @@ if (!response.ok) {
 const sourceHtml = await response.text();
 const pagesHtml = sourceHtml
   .replaceAll("/assets/", `${basePath}/assets/`)
-  .replaceAll("/og-water-stress.png", `${basePath}/og-water-stress.png`);
+  .replaceAll("/og-water-access.png", `${basePath}/og-water-access.png`);
 
 const outputUrl = new URL("../dist/client/index.html", import.meta.url);
 await writeFile(outputUrl, pagesHtml);

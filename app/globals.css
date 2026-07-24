@@ -1,17 +1,19 @@
 @import "tailwindcss";
 
 :root {
-  --paper: #f4f1e8;
-  --panel: #ebe6da;
-  --map-water: #e6ece6;
-  --land: #c8cdc0;
-  --ink: #1f2d29;
-  --muted: #68736c;
-  --rule: #cbc6b8;
-  --stress: #a24d40;
-  --stress-deep: #722d27;
-  --verified: #2d6656;
-  --white: #fffdf6;
+  --paper: #f2f4ef;
+  --panel: #e7eeea;
+  --map-water: #dceef4;
+  --land: #c8d5d4;
+  --ink: #18333a;
+  --muted: #607579;
+  --rule: #bdccca;
+  --blue-serious: #8abfd3;
+  --blue-high: #4b91b2;
+  --blue-very-high: #216887;
+  --blue-critical: #0d3e60;
+  --verified: #2f6e5e;
+  --white: #fcfdf8;
   --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
   --sans: "Avenir Next", Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
@@ -29,8 +31,8 @@ html {
 body {
   margin: 0;
   background:
-    linear-gradient(rgba(31, 45, 41, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(31, 45, 41, 0.035) 1px, transparent 1px),
+    linear-gradient(rgba(24, 51, 58, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(24, 51, 58, 0.035) 1px, transparent 1px),
     var(--paper);
   background-size: 59px 59px;
   color: var(--ink);
@@ -54,7 +56,7 @@ button {
 }
 
 ::selection {
-  background: rgba(162, 77, 64, 0.18);
+  background: rgba(75, 145, 178, 0.24);
 }
 
 .site-shell {
@@ -113,19 +115,19 @@ button {
 }
 
 .hero h1 {
-  max-width: 940px;
+  max-width: 980px;
   margin: 0;
   font-family: var(--serif);
-  font-size: clamp(3.5rem, 7.3vw, 7.6rem);
+  font-size: clamp(3.5rem, 7.1vw, 7.4rem);
   font-weight: 400;
   letter-spacing: -0.055em;
   line-height: 0.88;
 }
 
 .hero-deck {
-  max-width: 650px;
+  max-width: 710px;
   margin: 30px 0 0;
-  color: #495b54;
+  color: #405d63;
   font-family: var(--serif);
   font-size: clamp(1.25rem, 2vw, 1.85rem);
   line-height: 1.35;
@@ -146,6 +148,7 @@ button {
 
 .fact-value {
   display: block;
+  color: var(--blue-very-high);
   font-family: var(--serif);
   font-size: clamp(2.35rem, 4vw, 4rem);
   line-height: 1;
@@ -153,7 +156,7 @@ button {
 
 .fact-copy {
   display: block;
-  max-width: 260px;
+  max-width: 270px;
   margin-top: 8px;
   color: var(--muted);
   font-size: 0.86rem;
@@ -161,15 +164,15 @@ button {
 
 .atlas {
   border: 1px solid var(--rule);
-  background: rgba(255, 253, 246, 0.58);
-  box-shadow: 0 25px 70px rgba(42, 48, 43, 0.07);
+  background: rgba(252, 253, 248, 0.62);
+  box-shadow: 0 25px 70px rgba(24, 51, 58, 0.08);
 }
 
 .atlas-head {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 30px;
+  gap: 36px;
   padding: 32px 38px 28px;
   border-bottom: 1px solid var(--rule);
 }
@@ -184,32 +187,49 @@ button {
 }
 
 .legend {
-  display: flex;
+  display: grid;
+  grid-template-columns: auto minmax(110px, 190px) auto;
+  gap: 7px 9px;
   align-items: center;
-  gap: 10px;
-  margin: 6px 0 0;
+  min-width: 310px;
+  margin: 7px 0 0;
   color: var(--muted);
-  font-size: 0.79rem;
+  font-size: 0.72rem;
   white-space: nowrap;
 }
 
-.legend-dot {
-  width: 10px;
+.legend small {
+  grid-column: 1 / -1;
+  justify-self: end;
+  font-size: 0.67rem;
+  white-space: normal;
+}
+
+.legend-scale {
   height: 10px;
-  border-radius: 50%;
-  background: var(--stress);
-  box-shadow: 0 0 0 6px rgba(162, 77, 64, 0.13);
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    var(--blue-serious),
+    var(--blue-high),
+    var(--blue-very-high),
+    var(--blue-critical)
+  );
+  box-shadow: inset 0 0 0 1px rgba(13, 62, 96, 0.15);
 }
 
 .atlas-workspace {
   display: grid;
-  grid-template-columns: minmax(0, 2.25fr) minmax(300px, 0.75fr);
-  min-height: 610px;
+  grid-template-columns: minmax(0, 2.2fr) minmax(330px, 0.8fr);
+  min-height: 720px;
 }
 
 .map-panel {
-  position: relative;
+  position: sticky;
+  top: 0;
+  align-self: start;
   min-width: 0;
+  min-height: 100vh;
   padding: 30px;
   border-right: 1px solid var(--rule);
   background: var(--map-water);
@@ -222,8 +242,8 @@ button {
   pointer-events: none;
   content: "";
   background:
-    linear-gradient(rgba(45, 102, 86, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(45, 102, 86, 0.06) 1px, transparent 1px);
+    linear-gradient(rgba(33, 104, 135, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(33, 104, 135, 0.06) 1px, transparent 1px);
   background-size: 14.285% 25%;
 }
 
@@ -234,8 +254,8 @@ button {
   left: 24px;
   margin: 0;
   padding: 7px 10px;
-  border: 1px solid rgba(45, 102, 86, 0.18);
-  background: rgba(244, 241, 232, 0.88);
+  border: 1px solid rgba(33, 104, 135, 0.2);
+  background: rgba(242, 244, 239, 0.9);
   color: var(--muted);
   font-size: 0.69rem;
   font-weight: 700;
@@ -247,22 +267,23 @@ button {
 .world-map {
   position: relative;
   z-index: 1;
+  top: 0;
   display: block;
   width: 100%;
-  height: 100%;
-  min-height: 550px;
+  height: auto;
+  aspect-ratio: 960 / 520;
   overflow: visible;
 }
 
 .sphere {
   fill: transparent;
-  stroke: rgba(45, 102, 86, 0.18);
+  stroke: rgba(33, 104, 135, 0.2);
   stroke-width: 1;
 }
 
 .graticule {
   fill: none;
-  stroke: rgba(45, 102, 86, 0.12);
+  stroke: rgba(33, 104, 135, 0.13);
   stroke-width: 0.6;
 }
 
@@ -271,21 +292,49 @@ button {
   stroke: var(--map-water);
   stroke-width: 0.55;
   vector-effect: non-scaling-stroke;
-  transition: fill 160ms ease, opacity 160ms ease;
+  transition: fill 160ms ease, opacity 160ms ease, stroke 160ms ease;
 }
 
-.country.stressed {
-  fill: rgba(162, 77, 64, 0.68);
+.country.need-serious {
+  fill: var(--blue-serious);
+}
+
+.country.need-high {
+  fill: var(--blue-high);
+}
+
+.country.need-very-high {
+  fill: var(--blue-very-high);
+}
+
+.country.need-critical {
+  fill: var(--blue-critical);
 }
 
 .country.active {
-  fill: var(--stress-deep);
+  stroke: var(--white);
+  stroke-width: 2.4;
 }
 
 .country-marker {
-  color: var(--stress);
   cursor: pointer;
   outline: none;
+}
+
+.country-marker.need-serious {
+  color: var(--blue-serious);
+}
+
+.country-marker.need-high {
+  color: var(--blue-high);
+}
+
+.country-marker.need-very-high {
+  color: var(--blue-very-high);
+}
+
+.country-marker.need-critical {
+  color: var(--blue-critical);
 }
 
 .marker-hit {
@@ -293,10 +342,10 @@ button {
 }
 
 .marker-ring {
-  fill: rgba(244, 241, 232, 0.88);
+  fill: rgba(252, 253, 248, 0.9);
   stroke: currentColor;
-  stroke-width: 1.5;
-  opacity: 0.95;
+  stroke-width: 1.8;
+  opacity: 0.96;
   transition: r 160ms ease, stroke-width 160ms ease;
 }
 
@@ -311,14 +360,13 @@ button {
 .country-marker:focus-visible .marker-ring,
 .country-marker.active .marker-ring {
   r: 10px;
-  stroke-width: 2;
+  stroke-width: 2.4;
 }
 
 .country-marker:hover .marker-core,
 .country-marker:focus-visible .marker-core,
 .country-marker.active .marker-core {
   r: 5.5px;
-  fill: var(--stress-deep);
 }
 
 .country-marker:focus-visible .marker-ring {
@@ -330,12 +378,12 @@ button {
   flex-direction: column;
   min-width: 0;
   padding: 34px;
-  background: rgba(235, 230, 218, 0.72);
+  background: rgba(231, 238, 234, 0.82);
 }
 
 .country-index {
   margin: 0 0 4px;
-  color: var(--stress);
+  color: var(--blue-very-high);
   font-size: 0.74rem;
   font-weight: 800;
   letter-spacing: 0.13em;
@@ -345,7 +393,7 @@ button {
 .detail-rail h3 {
   margin: 0;
   font-family: var(--serif);
-  font-size: clamp(2.3rem, 4vw, 4.2rem);
+  font-size: clamp(2.2rem, 3.8vw, 4rem);
   font-weight: 400;
   letter-spacing: -0.045em;
   line-height: 0.95;
@@ -357,7 +405,7 @@ button {
   font-size: 0.83rem;
 }
 
-.stress-reading {
+.access-reading {
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 18px;
@@ -368,53 +416,66 @@ button {
 }
 
 .score {
-  color: var(--stress-deep);
+  color: var(--blue-critical);
   font-family: var(--serif);
-  font-size: 2.5rem;
+  font-size: 2.7rem;
   line-height: 1;
 }
 
 .score span {
+  margin-left: 2px;
   color: var(--muted);
   font-family: var(--sans);
-  font-size: 0.72rem;
+  font-size: 0.76rem;
 }
 
-.stress-label {
+.access-label {
   margin: 0;
-  color: var(--stress-deep);
+  color: var(--blue-critical);
   font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
-.stress-threshold {
+.access-count {
   margin: 4px 0 0;
   color: var(--muted);
   font-size: 0.75rem;
 }
 
 .meaning {
-  margin: 24px 0 29px;
-  color: #40514b;
+  margin: 24px 0 25px;
+  color: #3e5960;
   font-size: 0.88rem;
 }
 
-.evidence-block {
-  margin: 0 0 28px;
+.evidence-block,
+.solution-note {
   padding: 18px;
-  border: 1px solid rgba(45, 102, 86, 0.24);
-  background: rgba(230, 236, 230, 0.58);
+  border: 1px solid rgba(47, 110, 94, 0.25);
+  background: rgba(252, 253, 248, 0.5);
 }
 
-.evidence-block .rail-kicker {
+.evidence-block {
+  margin: 0 0 12px;
+}
+
+.solution-note {
+  margin: 0 0 28px;
+  border-color: rgba(33, 104, 135, 0.25);
+  background: rgba(220, 238, 244, 0.54);
+}
+
+.evidence-block .rail-kicker,
+.solution-note .rail-kicker {
   margin-bottom: 8px;
 }
 
-.evidence-block p:not(.rail-kicker) {
+.evidence-block p:not(.rail-kicker),
+.solution-note p:not(.rail-kicker) {
   margin: 0;
-  color: #495b54;
+  color: #486268;
   font-size: 0.75rem;
   line-height: 1.55;
 }
@@ -426,11 +487,18 @@ button {
   margin-top: 12px;
 }
 
-.evidence-links a {
+.evidence-links a,
+.solution-note a {
   color: var(--verified);
   font-size: 0.7rem;
   font-weight: 800;
   text-underline-offset: 3px;
+}
+
+.solution-note a {
+  display: inline-block;
+  margin-top: 11px;
+  color: var(--blue-very-high);
 }
 
 .giving {
@@ -559,14 +627,15 @@ button {
   text-underline-offset: 3px;
 }
 
-.country-list {
+.country-list,
+.global-context {
   grid-column: 1 / -1;
   padding-top: 28px;
   border-top: 1px solid var(--rule);
 }
 
 .country-list p {
-  color: #495b54;
+  color: #405d63;
   line-height: 1.8;
 }
 
@@ -586,6 +655,9 @@ button {
   }
 
   .map-panel {
+    position: relative;
+    top: auto;
+    min-height: 0;
     border-right: 0;
     border-bottom: 1px solid var(--rule);
   }
@@ -637,8 +709,8 @@ button {
   }
 
   .legend {
+    min-width: 0;
     margin-top: 20px;
-    white-space: normal;
   }
 
   .map-panel {
@@ -646,7 +718,8 @@ button {
   }
 
   .world-map {
-    min-height: 360px;
+    position: relative;
+    top: 0;
   }
 
   .map-instruction {
@@ -676,6 +749,16 @@ button {
 
   .site-footer {
     display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-facts {
+    grid-template-columns: 1fr;
+  }
+
+  .legend {
+    grid-template-columns: auto minmax(70px, 1fr) auto;
   }
 }
 
