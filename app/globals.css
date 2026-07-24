@@ -537,6 +537,14 @@ button {
   font-weight: 400;
 }
 
+.project-name {
+  margin: 7px 0 0;
+  color: var(--blue-critical);
+  font-size: 0.78rem;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
 .giving-copy {
   margin: 8px 0 16px;
   color: var(--muted);

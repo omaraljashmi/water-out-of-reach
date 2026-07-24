@@ -12,9 +12,7 @@ import { feature } from "topojson-client";
 import type { GeometryCollection, Topology } from "topojson-specification";
 import worldTopologyJson from "world-atlas/countries-110m.json";
 import {
-  CHARITY_WATER_DONATION_URL,
-  CHARITY_WATER_METHOD_URL,
-  CHARITY_WATER_VERIFICATION_URL,
+  COUNTRY_GIVING_ROUTES,
   COUNTRY_BY_ATLAS_NAME,
   FOCUS_COUNTRY_COUNT,
   JMP_METHODS_URL,
@@ -109,6 +107,7 @@ export function WaterAccessAtlas() {
     WATER_ACCESS_COUNTRIES.findIndex(
       (country) => country.code === activeCountry.code,
     ) + 1;
+  const activeGivingRoute = COUNTRY_GIVING_ROUTES[activeCountry.code];
 
   function activate(country: WaterAccessCountry) {
     setPinnedCode(country.code);
@@ -313,11 +312,11 @@ export function WaterAccessAtlas() {
                   collection or a repair instead.
                 </p>
                 <a
-                  href={CHARITY_WATER_METHOD_URL}
+                  href={WHO_BOREHOLE_GUIDANCE_URL}
                   target="_blank"
                   rel="noreferrer"
                 >
-                  See how projects are chosen ↗
+                  Read the WHO well guide ↗
                 </a>
               </div>
             </div>
@@ -327,32 +326,36 @@ export function WaterAccessAtlas() {
                 <span className="verified-mark" aria-hidden="true">
                   ✓
                 </span>
-                Independently verified
+                {activeGivingRoute.waterFocused
+                  ? "Country specific water project"
+                  : "Country specific project"}
               </p>
-              <h4>charity: water</h4>
+              <h4>{activeGivingRoute.organization}</h4>
+              <p className="project-name">{activeGivingRoute.project}</p>
               <p className="giving-copy">
-                Donations fund clean water projects through local partners,
-                including wells where groundwater and water quality make sense.
+                {activeGivingRoute.summary}
               </p>
               <a
                 className="donate-link"
-                href={CHARITY_WATER_DONATION_URL}
+                href={activeGivingRoute.donationUrl}
                 target="_blank"
                 rel="noreferrer"
               >
-                Give to clean water projects <span aria-hidden="true">↗</span>
+                View this project in {activeCountry.name}{" "}
+                <span aria-hidden="true">↗</span>
               </a>
               <a
                 className="verification-link"
-                href={CHARITY_WATER_VERIFICATION_URL}
+                href={activeGivingRoute.verificationUrl}
                 target="_blank"
                 rel="noreferrer"
               >
-                Check the Four Star charity rating ↗
+                {activeGivingRoute.verificationLabel} ↗
               </a>
               <p className="allocation-note">
-                This is a global giving route. A donation is not guaranteed to
-                be used in {activeCountry.name}.
+                {activeGivingRoute.waterFocused
+                  ? `This project page says the work is in ${activeCountry.name}. Read its current details before giving.`
+                  : `I could not find a current water only campaign for ${activeCountry.name}. This project still directs support to the country, and I kept that difference visible.`}
               </p>
             </div>
           </aside>
@@ -478,11 +481,11 @@ export function WaterAccessAtlas() {
               </a>{" "}
               and{" "}
               <a
-                href={CHARITY_WATER_METHOD_URL}
+                href={WHO_BOREHOLE_GUIDANCE_URL}
                 target="_blank"
                 rel="noreferrer"
               >
-                how projects are chosen
+                how a borehole should be planned
               </a>
               .
             </p>

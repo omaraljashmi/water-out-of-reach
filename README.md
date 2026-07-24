@@ -9,12 +9,13 @@ Hover, focus, or tap a blue country marker to:
 - see the share and estimated number of people without basic access
 - understand what the WHO and UNICEF indicator includes
 - learn when a well may be appropriate and when another solution may be better
-- open a verified route funding clean water projects
-- check the recipient's independent charity rating
+- open a project page for work in the selected country
+- check how the listed organization or project was reviewed
 
-The giving route is intentionally labeled as global. The interface does not
-claim that a gift will be restricted to the selected country or that a well is
-the correct intervention everywhere.
+Each country has its own giving route. Most are active water projects run by
+organizations vetted through GlobalGiving. When no current water only campaign
+was available, the card says so and shows a country project without describing
+it as water work. Every country points to its own donation destination.
 
 ## Data and verification
 
@@ -23,9 +24,7 @@ the correct intervention everywhere.
 - [JMP 2025 household drinking water report](https://data.unicef.org/resources/jmp-report-2025/)
 - [WHO drinking water service definitions](https://www.who.int/teams/environment-climate-change-and-health/water-sanitation-and-health/monitoring-and-evidence/wash-monitoring)
 - [WHO guidance for small water supplies](https://www.who.int/publications/i/item/9789240088740)
-- [charity: water donation route](https://www.charitywater.org/donate)
-- [charity: water project methods](https://www.charitywater.org/donate/water-project-sponsorship)
-- [charity: water on Charity Navigator](https://www.charitynavigator.org/ein/223936753)
+- [GlobalGiving vetting and due diligence](https://www.globalgiving.org/aboutus/how-it-works/vetting/)
 
 The access indicator is published under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
 
