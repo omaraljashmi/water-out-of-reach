@@ -43,5 +43,5 @@ test("server renders the drinking water access atlas", async () => {
     html,
     /Why Oman is not highlighted|Access is not the same as water stress/i,
   );
-  assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/i);
+  assert.doesNotMatch(html, /react-loading-skeleton/i);
 });

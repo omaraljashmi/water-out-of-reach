@@ -53,9 +53,3 @@ pnpm test
 
 Pushes to `main` run linting, build the app, test the rendered HTML, and publish
 the static artifact through GitHub Actions.
-
-## Sites
-
-Run `pnpm sites:build` before packaging a Sites deployment. The
-`pages:build` command rewrites asset URLs for the `/water-relief-map` GitHub
-Pages path and must not be used for the root Sites domain.
