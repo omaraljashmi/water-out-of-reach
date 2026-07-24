@@ -43,3 +43,9 @@ export const UNICEF_DONATION_URL =
 
 export const UNICEF_VERIFICATION_URL =
   "https://www.charitynavigator.org/ein/131760110";
+
+export const WRI_COUNTRY_EVIDENCE_URL =
+  "https://www.wri.org/insights/highest-water-stressed-countries";
+
+export const OMAN_DROUGHT_STUDY_URL =
+  "https://doi.org/10.1016/j.atmosres.2020.105126";

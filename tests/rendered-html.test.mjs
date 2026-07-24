@@ -33,6 +33,8 @@ test("server renders the water stress atlas", async () => {
   assert.match(html, /Extremely high water stress/);
   assert.match(html, /UNICEF USA/);
   assert.match(html, /WRI Aqueduct 4\.0/);
+  assert.match(html, /Why Oman is included/);
+  assert.match(html, /10\.1016\/j\.atmosres\.2020\.105126/);
   assert.equal((html.match(/class="country-marker/g) ?? []).length, 25);
   assert.match(html, /charitynavigator\.org\/ein\/131760110/);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/i);

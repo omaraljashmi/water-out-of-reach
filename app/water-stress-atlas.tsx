@@ -16,9 +16,11 @@ import type { GeometryCollection, Topology } from "topojson-specification";
 import worldTopologyJson from "world-atlas/countries-110m.json";
 import {
   COUNTRY_BY_NAME,
+  OMAN_DROUGHT_STUDY_URL,
   UNICEF_DONATION_URL,
   UNICEF_VERIFICATION_URL,
   WATER_STRESS_COUNTRIES,
+  WRI_COUNTRY_EVIDENCE_URL,
   type WaterStressCountry,
 } from "./water-data";
 
@@ -240,6 +242,48 @@ export function WaterStressAtlas() {
                 water supply available here. Small changes in supply or demand
                 can create serious competition for water.
               </p>
+
+              <div className="evidence-block">
+                <p className="rail-kicker">
+                  {activeCountry.code === "OMN"
+                    ? "Why Oman is included"
+                    : "Country evidence"}
+                </p>
+                {activeCountry.code === "OMN" ? (
+                  <p>
+                    WRI specifically names Oman among the countries with the
+                    highest baseline water stress. A separate peer reviewed
+                    study found a significant increase in drought frequency and
+                    severity in Oman from 1979 to 2014. Drought and baseline
+                    water stress are related pressures, but they are not the
+                    same measure.
+                  </p>
+                ) : (
+                  <p>
+                    This country&apos;s classification comes from WRI Aqueduct
+                    4.0, which uses open source, peer reviewed data to compare
+                    water demand with renewable supply.
+                  </p>
+                )}
+                <div className="evidence-links">
+                  <a
+                    href={WRI_COUNTRY_EVIDENCE_URL}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Read the WRI finding ↗
+                  </a>
+                  {activeCountry.code === "OMN" ? (
+                    <a
+                      href={OMAN_DROUGHT_STUDY_URL}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Read the Oman study ↗
+                    </a>
+                  ) : null}
+                </div>
+              </div>
             </div>
 
             <div className="giving">
