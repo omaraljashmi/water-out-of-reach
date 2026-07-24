@@ -17,9 +17,14 @@ import {
   CHARITY_WATER_VERIFICATION_URL,
   COUNTRY_BY_ATLAS_NAME,
   FOCUS_COUNTRY_COUNT,
+  JMP_METHODS_URL,
   JMP_REPORT_URL,
   PEOPLE_WITHOUT_BASIC_ACCESS,
+  UNICEF_CLIMATE_WASH_URL,
+  UNICEF_CONFLICT_WASH_URL,
   WATER_ACCESS_COUNTRIES,
+  WHO_BOREHOLE_GUIDANCE_URL,
+  WHO_DRINKING_WATER_FACTS_URL,
   WHO_SMALL_SUPPLIES_URL,
   WHO_WATER_LADDER_URL,
   WORLD_BANK_POPULATION_DATA_URL,
@@ -356,62 +361,142 @@ export function WaterAccessAtlas() {
 
       <section className="notes" id="notes" aria-labelledby="notes-title">
         <div>
-          <p className="section-kicker">Read it honestly</p>
-          <h2 id="notes-title">Access is not the same as water stress.</h2>
+          <p className="section-kicker">Why this map exists</p>
+          <h2 id="notes-title">The gap is rarely just one thing.</h2>
         </div>
         <div className="notes-body">
           <div>
-            <h3>What the map measures</h3>
+            <h3>Why ask this question</h3>
             <p>
-              The percentage without at least a basic drinking water service.
-              It is not a direct dirty water rate. It combines long collection
-              times, unimproved sources and direct surface water use.
+              Because water can exist and still not reach a home. I made this
+              map to find where that access gap is largest, understand what is
+              keeping it open and connect the data to a real way to help. The{" "}
+              <a href={JMP_REPORT_URL} target="_blank" rel="noreferrer">
+                latest JMP report
+              </a>{" "}
+              shows how sharply access still changes between rural and urban
+              areas, regions and income groups.
             </p>
           </div>
           <div>
-            <h3>Why Oman is not highlighted</h3>
+            <h3>How the map is calculated</h3>
             <p>
-              Oman, Saudi Arabia and the UAE face water scarcity, but this map
-              asks a different question: whether households have basic drinking
-              water access. High water stress alone does not prove that people
-              are drinking unsafe water.
-            </p>
-          </div>
-          <div>
-            <h3>Source and method</h3>
-            <p>
-              2024 country estimates come from the{" "}
+              Basic means an improved source that takes no more than 30 minutes
+              for a round trip. I subtract each country&apos;s 2024{" "}
               <a
                 href={WORLD_BANK_WATER_DATA_URL}
                 target="_blank"
                 rel="noreferrer"
               >
-                WHO and UNICEF Joint Monitoring Programme
-              </a>
-              , published by the World Bank under CC BY 4.0. People estimates
-              multiply the access gap by{" "}
+                basic access estimate
+              </a>{" "}
+              from 100. Countries at 20% or more are shown in blue. The people
+              estimate is that gap multiplied by the{" "}
               <a
                 href={WORLD_BANK_POPULATION_DATA_URL}
                 target="_blank"
                 rel="noreferrer"
               >
-                2024 population data
+                2024 population
+              </a>
+              . These are national estimates, not water tests.{" "}
+              <a
+                href={WHO_WATER_LADDER_URL}
+                target="_blank"
+                rel="noreferrer"
+              >
+                See the service ladder
               </a>
               .
             </p>
           </div>
           <div>
-            <h3>Wells need local evidence</h3>
+            <h3>What keeps showing up</h3>
             <p>
-              WHO guidance calls for context appropriate standards, water safety
-              planning, sanitary inspections and ongoing oversight for small
-              supplies. A borehole is one tool, not a universal answer.{" "}
+              All 37 countries have one measurable thing in common: at least one
+              in five people lacks a basic service. 31 of them are in Sub
+              Saharan Africa. There is no single cause, but the same pressures
+              repeat: long rural distances, low incomes,{" "}
               <a
                 href={WHO_SMALL_SUPPLIES_URL}
                 target="_blank"
                 rel="noreferrer"
               >
-                Read the guidance
+                small systems short on technical and financial support
+              </a>
+              ,{" "}
+              <a
+                href={UNICEF_CONFLICT_WASH_URL}
+                target="_blank"
+                rel="noreferrer"
+              >
+                conflict breaking pipes and power
+              </a>
+              , and{" "}
+              <a
+                href={UNICEF_CLIMATE_WASH_URL}
+                target="_blank"
+                rel="noreferrer"
+              >
+                droughts or floods disrupting supply
+              </a>
+              .
+            </p>
+          </div>
+          <div>
+            <h3>What the gap does to people</h3>
+            <p>
+              When water is far away, people lose hours carrying it. Women and
+              children often carry most of that burden. When a source is unsafe,
+              the cost becomes illness, missed school, lost work and medical
+              bills. WHO links contaminated water to cholera, diarrhoea,
+              dysentery, typhoid and polio.{" "}
+              <a
+                href={WHO_DRINKING_WATER_FACTS_URL}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Read the health evidence
+              </a>
+              .
+            </p>
+          </div>
+          <div>
+            <h3>How teams decide on a well</h3>
+            <p>
+              A dark blue country is a place to investigate, not a drilling
+              instruction. Teams need local data on groundwater, depth, yield
+              and water quality. They also have to plan the pump, treatment,
+              maintenance and monitoring. Sometimes a well is right. Sometimes
+              the answer is pipes, repairs, spring protection, filters or
+              rainwater collection.{" "}
+              <a
+                href={WHO_BOREHOLE_GUIDANCE_URL}
+                target="_blank"
+                rel="noreferrer"
+              >
+                Read the WHO borehole guidance
+              </a>{" "}
+              and{" "}
+              <a
+                href={CHARITY_WATER_METHOD_URL}
+                target="_blank"
+                rel="noreferrer"
+              >
+                see how solutions are chosen
+              </a>
+              .
+            </p>
+          </div>
+          <div>
+            <h3>Where the map stops</h3>
+            <p>
+              The map gets us to a country, not a village. JMP builds national
+              estimates from household data and fits a trend across the
+              available points. A local assessment still has to decide who
+              needs help and which solution can stay safe and working.{" "}
+              <a href={JMP_METHODS_URL} target="_blank" rel="noreferrer">
+                Read the estimation method
               </a>
               .
             </p>
@@ -420,18 +505,6 @@ export function WaterAccessAtlas() {
             <h3>The {FOCUS_COUNTRY_COUNT} countries shown</h3>
             <p>
               {WATER_ACCESS_COUNTRIES.map((country) => country.name).join(" · ")}
-            </p>
-          </div>
-          <div className="global-context">
-            <h3>Global context</h3>
-            <p>
-              The 2025 JMP report estimates that 287 million people used limited
-              services, 302 million used unimproved sources and 106 million
-              drank surface water in 2024.{" "}
-              <a href={JMP_REPORT_URL} target="_blank" rel="noreferrer">
-                Read the report
-              </a>
-              .
             </p>
           </div>
         </div>

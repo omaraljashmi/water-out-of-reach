@@ -32,12 +32,16 @@ test("server renders the drinking water access atlas", async () => {
   assert.match(html, /Where water is out of reach/);
   assert.match(html, /Without a basic drinking water service/);
   assert.match(html, /charity: water/);
-  assert.match(html, /WHO and UNICEF Joint Monitoring Programme/);
-  assert.match(html, /Why Oman is not highlighted/);
-  assert.match(html, /A borehole is one tool, not a universal answer/);
+  assert.match(html, /Why ask this question/);
+  assert.match(html, /31 of them are in Sub Saharan Africa/);
+  assert.match(html, /not a drilling instruction/);
+  assert.match(html, /Read the estimation method/);
   assert.equal((html.match(/class="country-marker/g) ?? []).length, 37);
   assert.match(html, /charitynavigator\.org\/ein\/223936753/);
   assert.match(html, /Darker blue means a greater share of people in need/);
-  assert.doesNotMatch(html, /extremely high baseline water stress/i);
+  assert.doesNotMatch(
+    html,
+    /Why Oman is not highlighted|Access is not the same as water stress/i,
+  );
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/i);
 });

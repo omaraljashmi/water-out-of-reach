@@ -64,11 +64,21 @@ export const WORLD_BANK_WATER_DATA_URL =
 export const WORLD_BANK_POPULATION_DATA_URL =
   "https://data.worldbank.org/indicator/SP.POP.TOTL";
 export const JMP_REPORT_URL =
-  "https://data.unicef.org/resources/jmp-report-2025/";
+  "https://washdata.org/reports/jmp-2025-wash-households";
+export const JMP_METHODS_URL =
+  "https://washdata.org/topics/methods/estimation-methods";
 export const WHO_WATER_LADDER_URL =
   "https://www.who.int/teams/environment-climate-change-and-health/water-sanitation-and-health/monitoring-and-evidence/wash-monitoring";
+export const WHO_DRINKING_WATER_FACTS_URL =
+  "https://www.who.int/news-room/fact-sheets/detail/drinking-water";
 export const WHO_SMALL_SUPPLIES_URL =
   "https://www.who.int/publications/i/item/9789240088740";
+export const WHO_BOREHOLE_GUIDANCE_URL =
+  "https://www.who.int/teams/environment-climate-change-and-health/water-sanitation-and-health/water-safety-and-quality/water-safety-planning/borehole-with-a-motorized-pump";
+export const UNICEF_CONFLICT_WASH_URL =
+  "https://www.unicef.org/stories/fast-facts-water-sanitation-hygiene-conflict";
+export const UNICEF_CLIMATE_WASH_URL =
+  "https://www.unicef.org/wash/climate";
 
 export const CHARITY_WATER_DONATION_URL =
   "https://www.charitywater.org/donate";
