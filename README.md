@@ -16,6 +16,8 @@ does not claim that a gift will be restricted to the selected country.
 ## Data and verification
 
 - [WRI Aqueduct 4.0 country rankings](https://www.wri.org/data/aqueduct-40-country-rankings)
+- [WRI finding naming Oman among the most water-stressed countries](https://www.wri.org/insights/highest-water-stressed-countries)
+- [Peer-reviewed Oman drought study, Atmospheric Research](https://doi.org/10.1016/j.atmosres.2020.105126)
 - [UNICEF USA safe water projects](https://www.unicefusa.org/what-unicef-does/childrens-health/water-sanitation/safe-water-projects?form=donate)
 - [UNICEF USA on Charity Navigator](https://www.charitynavigator.org/ein/131760110)
 
@@ -30,3 +32,8 @@ pnpm install
 pnpm dev
 pnpm test
 ```
+
+## GitHub Pages
+
+Pushes to `main` run linting, build the app, test the rendered HTML, and publish
+the static artifact through GitHub Actions.
