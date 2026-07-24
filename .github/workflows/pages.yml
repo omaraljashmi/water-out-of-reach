@@ -40,7 +40,7 @@ jobs:
 
       - name: Build GitHub Pages artifact
         env:
-          GITHUB_PAGES_BASE_PATH: /water-relief-map
+          GITHUB_PAGES_BASE_PATH: /water-out-of-reach
         run: pnpm run pages:build
 
       - name: Test rendered output

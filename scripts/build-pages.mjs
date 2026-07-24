@@ -1,6 +1,6 @@
 import { copyFile, writeFile } from "node:fs/promises";
 
-const basePath = process.env.GITHUB_PAGES_BASE_PATH ?? "/water-relief-map";
+const basePath = process.env.GITHUB_PAGES_BASE_PATH ?? "/water-out-of-reach";
 const workerUrl = new URL("../dist/server/index.js", import.meta.url);
 workerUrl.searchParams.set("pages", `${Date.now()}`);
 
