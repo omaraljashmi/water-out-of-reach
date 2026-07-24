@@ -22,20 +22,22 @@ async function render() {
   );
 }
 
-test("server renders the water stress atlas", async () => {
+test("server renders the drinking water access atlas", async () => {
   const response = await render();
   assert.equal(response.status, 200);
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
   assert.match(html, /<title>Where Water Runs Thin<\/title>/i);
-  assert.match(html, /Where water runs thin/);
-  assert.match(html, /Extremely high water stress/);
-  assert.match(html, /UNICEF USA/);
-  assert.match(html, /WRI Aqueduct 4\.0/);
-  assert.match(html, /Why Oman is included/);
-  assert.match(html, /10\.1016\/j\.atmosres\.2020\.105126/);
-  assert.equal((html.match(/class="country-marker/g) ?? []).length, 25);
-  assert.match(html, /charitynavigator\.org\/ein\/131760110/);
+  assert.match(html, /Where water is out of reach/);
+  assert.match(html, /Without a basic drinking water service/);
+  assert.match(html, /charity: water/);
+  assert.match(html, /WHO and UNICEF Joint Monitoring Programme/);
+  assert.match(html, /Why Oman is not highlighted/);
+  assert.match(html, /A borehole is one tool, not a universal answer/);
+  assert.equal((html.match(/class="country-marker/g) ?? []).length, 37);
+  assert.match(html, /charitynavigator\.org\/ein\/223936753/);
+  assert.match(html, /Darker blue means a greater share of people in need/);
+  assert.doesNotMatch(html, /extremely high baseline water stress/i);
   assert.doesNotMatch(html, /codex-preview|react-loading-skeleton/i);
 });

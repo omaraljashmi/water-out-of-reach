@@ -1,5 +1,5 @@
-import { WaterStressAtlas } from "./water-stress-atlas";
+import { WaterAccessAtlas } from "./water-access-atlas";
 
 export default function Home() {
-  return <WaterStressAtlas />;
+  return <WaterAccessAtlas />;
 }
