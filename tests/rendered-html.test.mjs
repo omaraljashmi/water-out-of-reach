@@ -29,8 +29,8 @@ test("server renders the drinking water access atlas", async () => {
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /<title>Where Water Runs Thin<\/title>/i);
-  assert.match(html, /Where water is out of reach/);
+  assert.match(html, /<title>Water Out of Reach<\/title>/i);
+  assert.match(html, /Water out of reach/);
   assert.match(html, /Without a basic drinking water service/);
   assert.match(html, /ODDPH/);
   assert.match(html, /Bring Safe Water to Munigi/);

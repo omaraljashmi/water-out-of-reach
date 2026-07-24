@@ -117,8 +117,8 @@ export function WaterAccessAtlas() {
   return (
     <main className="site-shell">
       <header className="topline">
-        <a className="wordmark" href="#top" aria-label="Where Water Runs Thin">
-          WRT · Atlas 02
+        <a className="wordmark" href="#top" aria-label="Water Out of Reach">
+          Water Out of Reach
         </a>
         <nav aria-label="Page">
           <a href="#atlas">Explore</a>
@@ -129,7 +129,7 @@ export function WaterAccessAtlas() {
       <section className="hero" id="top" aria-labelledby="page-title">
         <div>
           <p className="eyebrow">Drinking water access · 2024</p>
-          <h1 id="page-title">Where water is out of reach</h1>
+          <h1 id="page-title">Water out of reach</h1>
           <p className="hero-deck">
             This map focuses on people, not national water supply. It shows the
             countries where at least one in five people still lack even a basic

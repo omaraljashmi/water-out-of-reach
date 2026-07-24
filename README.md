@@ -1,4 +1,4 @@
-# Where Water Runs Thin
+# Water Out of Reach
 
 An editorial, interactive world map focused on household drinking water access.
 It shows the 37 countries where at least 20% of people lacked even a basic
